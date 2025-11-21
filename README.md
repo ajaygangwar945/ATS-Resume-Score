@@ -2,6 +2,10 @@
 
 This is a Streamlit-based web application that uses Google's Gemini AI to analyze resumes against job descriptions. It acts as an Applicant Tracking System (ATS) scorer, providing insights on resume suitability, skill improvement suggestions, missing keywords, and percentage match with job requirements.
 
+## Live Demo
+
+Try the live version of the app: [ATS Resume Score](https://ats-resume-score-945.streamlit.app/)
+
 ## Features
 
 - **Resume Analysis**: Upload a PDF resume and enter a job description to get a detailed evaluation of how well the candidate's profile aligns with the job.
