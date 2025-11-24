@@ -45,13 +45,13 @@ if uploaded_file is not None:
 Submit1 = st.button("Tell me about my resume")
 Submit2 = st.button("How can i improve my skills?")
 Submit3 = st.button("What are the keywords missing in my resume?")
-submit4 = st.button("Percetage match with job description")
+submit4 = st.button("Percentage match with job description")
 
 input_prompt1 = """
     You are an experienced HR with a lot of experience in hiring candidates in the field of Data Science, Full stack
     web development, Big Data and machine learning.
     your task is to analyze the resume and job description and give a detailed analysis of the resume.
-    please share your professional evaluation on whether the candidate's profile alighns with the job description.
+    please share your professional evaluation on whether the candidate's profile aligns with the job description.
     Highlight the strengths and weaknesses of the applicant in relation to the job description.
 """
 
