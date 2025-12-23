@@ -10,7 +10,11 @@
 
 ## 🚀 Live Demo
 
-Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score-945.streamlit.app/)
+Try the live version of the app:
+
+<a href="https://ats-resume-score-945.streamlit.app/">
+  <img src="https://img.shields.io/badge/Streamlit-Live-FF4B4B?logo=streamlit"/>
+</a>
 
 ---
 
