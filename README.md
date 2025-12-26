@@ -22,14 +22,6 @@ Try the live version of the app:
 
 ## 🖼️ App Preview
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Status-Active-4285F4"/>
-  <img src="https://img.shields.io/badge/Platform-Web-FF4B4B"/>
-  <img src="https://img.shields.io/badge/ATS-Compatible-4285F4"/>
-  <img src="https://img.shields.io/badge/AI-Gemini%202.5%20Flash-4285F4"/>
-  <img src="https://img.shields.io/badge/Input-PDF-FF4B4B"/>
-</p>
-
 <p align="center">
   <img src="assests/app_preview.png" width="850"/>
 </p>
