@@ -31,7 +31,7 @@ Try the live version of the app:
 </p>
 
 <p align="center">
-  <img src="assets/app_preview.png" width="850"/>
+  <img src="assests/app_preview.png" width="850"/>
 </p>
 
 
