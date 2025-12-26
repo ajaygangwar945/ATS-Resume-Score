@@ -4,7 +4,9 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
 ![Gemini AI](https://img.shields.io/badge/Google-Gemini%20AI-4285F4)
 
-**ATS Resume Score** is a powerful Streamlit-based web application that leverages Google's **Gemini AI** to analyze resumes against job descriptions. It acts as an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
+<p align="justify">
+<strong>ATS Resume Score</strong> is a powerful Streamlit-based web application that leverages Google's <strong>Gemini AI</strong> to analyze resumes against job descriptions. It simulates an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
+</p>
 
 ---
 
@@ -18,12 +20,31 @@ Try the live version of the app:
 
 ---
 
+## 🖼️ App Preview
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Status-Active-4285F4"/>
+  <img src="https://img.shields.io/badge/Platform-Web-FF4B4B"/>
+  <img src="https://img.shields.io/badge/ATS-Compatible-4285F4"/>
+  <img src="https://img.shields.io/badge/AI-Gemini%202.5%20Flash-4285F4"/>
+  <img src="https://img.shields.io/badge/Input-PDF-FF4B4B"/>
+</p>
+
+<p align="center">
+  <img src="assets/app_preview.png" width="850"/>
+</p>
+
+
+---
+
 ## ✨ Features
 
 - **📊 Resume Analysis**: Upload a PDF resume and get a detailed evaluation of alignment with the job description.
 - **💡 Skill Improvement**: Receive personalized advice on how to enhance your skills.
 - **🔑 Keyword Analysis**: Identify missing keywords and get a percentage match score.
 - **📈 Percentage Match**: Understand how well your resume fits the job requirements.
+- **🧮 ATS Score Output**: Generates a numerical ATS match score (0–100) with clear interpretation.
+
 
 ---
 
@@ -33,6 +54,22 @@ Try the live version of the app:
 2.  **Processing**: The app converts the PDF to an image and prepares it for analysis.
 3.  **AI Analysis**: Google's **Gemini 2.5 Flash** model analyzes the content.
 4.  **Results**: View detailed feedback, strengths, weaknesses, and missing keywords.
+
+---
+
+## 🧪 Example Use Case
+
+**Job Role**: Data Analyst  
+**Resume Match Score**: 72%  
+
+**Missing Keywords**:
+- SQL Optimization
+- Power BI DAX
+- Statistical Modeling
+
+**AI Suggestions**:
+- Add measurable achievements using metrics
+- Include project-based experience aligned with job description
 
 ---
 
@@ -107,3 +144,10 @@ This application is designed with security in mind:
 
 -   The application currently processes the **first page** of the uploaded PDF.
 -   Ensure your Google API Key has access to the **Gemini API**.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
