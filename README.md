@@ -65,37 +65,44 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation & Setup
 
-1.  **Clone the repository**:
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd ATS-Resume-Score
+```
+
+### 2. Create Virtual Environment
+```bash
+python -m venv venv
+```
+
+### 3. Activate Virtual Environment
+-   **Windows**: `venv\Scripts\activate`
+-   **macOS/Linux**: `source venv/bin/activate`
+
+### 4. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Set Up Environment Variables
+-   Copy `.env.example` to `.env`:
     ```bash
-    git clone <repository-url>
+    cp .env.example .env
     ```
-
-2.  **Create a virtual environment**:
-    ```bash
-    python -m venv venv
+-   Edit `.env` and add your Google API Key:
+    ```env
+    GOOGLE_API_KEY=your_api_key_here
     ```
+-   **⚠️ IMPORTANT**: Never commit `.env` to Git! It's already in `.gitignore`.
 
-3.  **Activate the virtual environment**:
-    -   **Windows**: `venv\Scripts\activate`
-    -   **macOS/Linux**: `source venv/bin/activate`
-
-4.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-5.  **Set up environment variables**:
-    -   Copy `.env.example` to `.env`:
-        ```bash
-        cp .env.example .env
-        ```
-    -   Edit `.env` and add your Google API Key:
-        ```env
-        GOOGLE_API_KEY=your_api_key_here
-        ```
-    -   **⚠️ Never commit `.env` to Git!**
+### 6. Get Your Google Gemini API Key
+1. Go to: [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Create a new API key
+4. Copy the key and paste it in your `.env` file
 
 ---
 
@@ -110,15 +117,131 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
 
 ---
 
-## 🔒 Security
+## 🚀 Deployment to Streamlit Cloud
 
-This application is designed with security in mind:
--   **No Hardcoded Secrets**: API keys are managed via environment variables (`.env`) or Streamlit secrets.
--   **Local Processing**: Files are processed in memory and sent directly to the Gemini API.
--   **Git Ignore**: `.env` file is excluded from version control.
--   **Secure Deployment**: Use Streamlit secrets for production deployment.
+### Prerequisites
+- GitHub account with your repository pushed
+- Streamlit Cloud account (free at https://streamlit.io/cloud)
+- Google Gemini API Key
 
-📖 **See [SECURITY.md](SECURITY.md) for detailed security guidelines.**
+### Deployment Steps
+
+#### Step 1: Push to GitHub
+```bash
+git add .
+git commit -m "Prepare for deployment"
+git push origin main
+```
+
+**⚠️ IMPORTANT**: Verify `.env` is NOT committed to GitHub!
+```bash
+git status  # Should NOT show .env
+```
+
+#### Step 2: Deploy on Streamlit Cloud
+
+1. **Go to**: [Streamlit Cloud](https://share.streamlit.io/)
+2. **Sign in** with your GitHub account
+3. **Click "New app"**
+4. **Select your repository** from the dropdown
+5. **Choose branch**: `main`
+6. **Main file path**: `app.py`
+
+#### Step 3: Add API Key as Secret
+
+**Before clicking "Deploy":**
+
+1. Click **"Advanced settings"** or **"Secrets"** tab
+2. Add your secret in TOML format:
+   ```toml
+   GOOGLE_API_KEY = "your_actual_api_key_here"
+   ```
+3. Click **"Save"**
+4. Click **"Deploy"**
+
+**📦 Note**: The `packages.txt` file is included in the repository. It installs `poppler-utils` required for PDF processing. Streamlit Cloud will automatically install it.
+
+#### Step 4: Verify Deployment
+
+After deployment:
+1. Your app will be available at: `https://your-app-name.streamlit.app`
+2. Test all buttons to ensure API key works
+3. Check logs if there are any errors
+
+---
+
+## 🔒 Security Best Practices
+
+### API Key Management
+- ✅ **DO**: Use `.env` file for local development
+- ✅ **DO**: Use Streamlit secrets for production deployment
+- ✅ **DO**: Keep `.env` in `.gitignore`
+- ❌ **DON'T**: Commit API keys to GitHub
+- ❌ **DON'T**: Share your API key publicly
+- ❌ **DON'T**: Hardcode API keys in your code
+
+### Before Pushing to GitHub
+- [ ] Verify `.env` is in `.gitignore`
+- [ ] Run `git status` to ensure `.env` is NOT tracked
+- [ ] Ensure no API keys are in code files
+- [ ] `.env.example` exists (without real keys)
+
+### API Key Security Features
+- **No Hardcoded Secrets**: API keys are managed via environment variables (`.env`) or Streamlit secrets
+- **Local Processing**: Files are processed in memory and sent directly to the Gemini API
+- **Git Ignore**: `.env` file is excluded from version control
+- **Secure Deployment**: Streamlit secrets are encrypted
+
+### Recommended Security Measures
+1. **API Key Restrictions** (Google Cloud Console):
+   - Restrict to specific APIs (Gemini API only)
+   - Restrict to specific domains (your Streamlit app URL)
+   - Set usage quotas
+
+2. **Key Rotation**: Rotate API keys periodically
+
+3. **Monitoring**: Monitor API usage at [Google Cloud Console](https://console.cloud.google.com)
+
+### If Your Key is Compromised
+1. **Immediately revoke** the exposed key at [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. **Generate new key** from Google Cloud Console
+3. **Update** all environments (local `.env`, Streamlit secrets)
+4. **Review** API usage logs for unauthorized access
+
+---
+
+## 🔧 Troubleshooting
+
+### Error: "API Key not found"
+- Check `.env` file has `GOOGLE_API_KEY` set
+- For Streamlit Cloud: Verify secrets are set correctly
+- Check the key name is exactly `GOOGLE_API_KEY`
+
+### Error: "Invalid API Key"
+- Verify your Gemini API key is valid
+- Check if API key has proper permissions
+- Regenerate key if needed at [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+### Error: "PDFInfoNotInstalledError" or "poppler not installed"
+**For Streamlit Cloud**: 
+- ✅ The `packages.txt` file is included in the repository
+- Streamlit Cloud automatically installs poppler
+
+**For Local Development**:
+- **Windows**: Download from [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)
+- **macOS**: `brew install poppler`
+- **Linux**: `sudo apt-get install poppler-utils`
+
+### Error: "Model Not Found"
+- Your API key doesn't have access to Gemini models
+- Verify your API key at [Google AI Studio](https://makersuite.google.com/app/apikey)
+- Make sure Gemini API access is enabled
+- Try regenerating your API key
+
+### App not updating on Streamlit Cloud
+- Clear browser cache
+- Check if latest code is pushed to GitHub
+- Restart app in Streamlit dashboard
 
 ---
 
@@ -136,12 +259,7 @@ This application is designed with security in mind:
 
 -   The application currently processes the **first page** of the uploaded PDF.
 -   Ensure your Google API Key has access to the **Gemini API**.
-
----
-
-## 🚀 Deployment
-
-For deploying to Streamlit Cloud, see [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md)
+-   API calls are made directly to Google's Gemini API - no data is stored.
 
 ---
 
