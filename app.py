@@ -7,7 +7,22 @@ from PIL import Image
 import pdf2image
 import google.generativeai as genai
 import base64
+<<<<<<< HEAD
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+=======
+
+# Get API key from environment variable or Streamlit secrets (for deployment)
+api_key = os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    try:
+        api_key = st.secrets.get("GOOGLE_API_KEY")
+    except (AttributeError, FileNotFoundError):
+        pass
+if not api_key:
+    st.error("⚠️ API Key not found! Please set GOOGLE_API_KEY in your .env file or Streamlit secrets.")
+    st.stop()
+genai.configure(api_key=api_key)
+>>>>>>> 112230d (Initial commit)
 
 
 def get_gemini_response(input,pdf_content,prompt):

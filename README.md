@@ -4,14 +4,19 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
 ![Gemini AI](https://img.shields.io/badge/Google-Gemini%20AI-4285F4)
 
+<<<<<<< HEAD
 <p align="justify">
 <strong>ATS Resume Score</strong> is a powerful Streamlit-based web application that leverages Google's <strong>Gemini AI</strong> to analyze resumes against job descriptions. It simulates an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
 </p>
+=======
+**ATS Resume Score** is a powerful Streamlit-based web application that leverages Google's **Gemini AI** to analyze resumes against job descriptions. It acts as an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
+>>>>>>> 112230d (Initial commit)
 
 ---
 
 ## 🚀 Live Demo
 
+<<<<<<< HEAD
 Try the live version of the app:
 
 <a href="https://ats-resume-score-945.streamlit.app/">
@@ -26,6 +31,9 @@ Try the live version of the app:
   <img src="assests/app_preview.png" width="850"/>
 </p>
 
+=======
+Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score-945.streamlit.app/)
+>>>>>>> 112230d (Initial commit)
 
 ---
 
@@ -35,8 +43,11 @@ Try the live version of the app:
 - **💡 Skill Improvement**: Receive personalized advice on how to enhance your skills.
 - **🔑 Keyword Analysis**: Identify missing keywords and get a percentage match score.
 - **📈 Percentage Match**: Understand how well your resume fits the job requirements.
+<<<<<<< HEAD
 - **🧮 ATS Score Output**: Generates a numerical ATS match score (0–100) with clear interpretation.
 
+=======
+>>>>>>> 112230d (Initial commit)
 
 ---
 
@@ -49,6 +60,7 @@ Try the live version of the app:
 
 ---
 
+<<<<<<< HEAD
 ## 🧪 Example Use Case
 
 **Job Role**: Data Analyst  
@@ -65,6 +77,8 @@ Try the live version of the app:
 
 ---
 
+=======
+>>>>>>> 112230d (Initial commit)
 ## 📋 Requirements
 
 -   Python 3.7+
@@ -136,6 +150,7 @@ This application is designed with security in mind:
 
 -   The application currently processes the **first page** of the uploaded PDF.
 -   Ensure your Google API Key has access to the **Gemini API**.
+<<<<<<< HEAD
 
 ---
 
@@ -143,3 +158,5 @@ This application is designed with security in mind:
 
 This project is licensed under the MIT License.
 
+=======
+>>>>>>> 112230d (Initial commit)
