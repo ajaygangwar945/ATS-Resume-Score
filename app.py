@@ -22,9 +22,46 @@ genai.configure(api_key=api_key)
 
 
 def get_gemini_response(input,pdf_content,prompt):
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content([input,pdf_content[0],prompt])
-    return response.text
+    # Try models in order of preference (all support vision/image inputs)
+    models_to_try = [
+        "gemini-1.5-pro",      # Best quality, supports vision
+        "gemini-1.5-flash",     # Faster, cheaper, supports vision
+        "gemini-pro-vision",    # Older but stable vision model
+        "gemini-pro"            # Fallback (may not support images)
+    ]
+    
+    last_error = None
+    for model_name in models_to_try:
+        try:
+            model = genai.GenerativeModel(model_name)
+            response = model.generate_content([input,pdf_content[0],prompt])
+            return response.text
+        except Exception as e:
+            last_error = e
+            # Try next model
+            continue
+    
+    # If all models failed, show error
+    error_msg = str(last_error) if last_error else "Unknown error"
+    if "NotFound" in error_msg or "404" in error_msg:
+        st.error("""
+        ⚠️ **Model Not Found Error**: No Gemini model is available.
+        
+        **Possible causes:**
+        1. Your API key doesn't have access to Gemini models
+        2. Your API key might be invalid or expired
+        3. Gemini API might be temporarily unavailable
+        
+        **Solutions:**
+        - Verify your API key at: https://makersuite.google.com/app/apikey
+        - Make sure your API key has Gemini API access enabled
+        - Check Streamlit secrets if deployed
+        - Try regenerating your API key
+        """)
+    else:
+        st.error(f"⚠️ **API Error**: {error_msg}\n\nPlease check your API key and try again.")
+    st.stop()
+    return ""
 
 def input_pdf_setup(uploaded_file):
     if uploaded_file is not None:
