@@ -3,7 +3,7 @@
 ## 🔴 CRITICAL: Before Pushing to GitHub
 
 ### 1. API Key Security (URGENT!)
-- [ ] **REVOKE** the exposed API key: `AIzaSyCcismjITj_syhlyOGTcphX5NoAX_Gxg1w`
+- [ ] **REVOKE** the exposed API key: `AIzaSy.......`
   - Go to: https://makersuite.google.com/app/apikey
   - Delete the compromised key
 - [ ] **CREATE** a new API key
