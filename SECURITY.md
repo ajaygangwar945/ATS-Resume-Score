@@ -18,7 +18,7 @@
 
 1. **Revoke the exposed API key**:
    - Go to: https://makersuite.google.com/app/apikey
-   - Delete/revoke the key: `AIzaSyCcismjITj_syhlyOGTcphX5NoAX_Gxg1w`
+   - Delete/revoke any compromised keys
    - Create a new API key
 
 2. **Update your `.env` file**:
