@@ -1,20 +1,20 @@
-<<<<<<< HEAD
-.env
-venv/
-__pycache__/
-=======
-# Environment variables
+# Environment variables - NEVER commit these!
 .env
 .env.local
 .env.*.local
 
 # Python
 venv/
+env/
+ENV/
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+build/
+dist/
+*.egg-info/
 
 # IDE
 .vscode/
@@ -22,6 +22,7 @@ __pycache__/
 *.swp
 *.swo
 *~
+.cursor/
 
 # OS
 .DS_Store
@@ -29,4 +30,6 @@ Thumbs.db
 
 # Streamlit
 .streamlit/secrets.toml
->>>>>>> 112230d (Initial commit)
+
+# Logs
+*.log

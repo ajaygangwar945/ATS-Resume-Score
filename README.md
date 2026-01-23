@@ -4,24 +4,13 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
 ![Gemini AI](https://img.shields.io/badge/Google-Gemini%20AI-4285F4)
 
-<<<<<<< HEAD
-<p align="justify">
-<strong>ATS Resume Score</strong> is a powerful Streamlit-based web application that leverages Google's <strong>Gemini AI</strong> to analyze resumes against job descriptions. It simulates an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
-</p>
-=======
 **ATS Resume Score** is a powerful Streamlit-based web application that leverages Google's **Gemini AI** to analyze resumes against job descriptions. It acts as an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
->>>>>>> 112230d (Initial commit)
 
 ---
 
 ## 🚀 Live Demo
 
-<<<<<<< HEAD
-Try the live version of the app:
-
-<a href="https://ats-resume-score-945.streamlit.app/">
-  <img src="https://img.shields.io/badge/Streamlit-Live-FF4B4B?logo=streamlit"/>
-</a>
+Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score-945.streamlit.app/)
 
 ---
 
@@ -31,10 +20,6 @@ Try the live version of the app:
   <img src="assests/app_preview.png" width="850"/>
 </p>
 
-=======
-Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score-945.streamlit.app/)
->>>>>>> 112230d (Initial commit)
-
 ---
 
 ## ✨ Features
@@ -43,11 +28,7 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
 - **💡 Skill Improvement**: Receive personalized advice on how to enhance your skills.
 - **🔑 Keyword Analysis**: Identify missing keywords and get a percentage match score.
 - **📈 Percentage Match**: Understand how well your resume fits the job requirements.
-<<<<<<< HEAD
 - **🧮 ATS Score Output**: Generates a numerical ATS match score (0–100) with clear interpretation.
-
-=======
->>>>>>> 112230d (Initial commit)
 
 ---
 
@@ -60,7 +41,6 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
 
 ---
 
-<<<<<<< HEAD
 ## 🧪 Example Use Case
 
 **Job Role**: Data Analyst  
@@ -77,8 +57,6 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
 
 ---
 
-=======
->>>>>>> 112230d (Initial commit)
 ## 📋 Requirements
 
 -   Python 3.7+
@@ -109,11 +87,15 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
     ```
 
 5.  **Set up environment variables**:
-    -   Create a `.env` file in the project root.
-    -   Add your Google API Key:
+    -   Copy `.env.example` to `.env`:
+        ```bash
+        cp .env.example .env
+        ```
+    -   Edit `.env` and add your Google API Key:
         ```env
         GOOGLE_API_KEY=your_api_key_here
         ```
+    -   **⚠️ Never commit `.env` to Git!**
 
 ---
 
@@ -131,8 +113,12 @@ Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score
 ## 🔒 Security
 
 This application is designed with security in mind:
--   **No Hardcoded Secrets**: API keys are managed via environment variables (`.env`).
+-   **No Hardcoded Secrets**: API keys are managed via environment variables (`.env`) or Streamlit secrets.
 -   **Local Processing**: Files are processed in memory and sent directly to the Gemini API.
+-   **Git Ignore**: `.env` file is excluded from version control.
+-   **Secure Deployment**: Use Streamlit secrets for production deployment.
+
+📖 **See [SECURITY.md](SECURITY.md) for detailed security guidelines.**
 
 ---
 
@@ -150,13 +136,15 @@ This application is designed with security in mind:
 
 -   The application currently processes the **first page** of the uploaded PDF.
 -   Ensure your Google API Key has access to the **Gemini API**.
-<<<<<<< HEAD
+
+---
+
+## 🚀 Deployment
+
+For deploying to Streamlit Cloud, see [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md)
 
 ---
 
 ## 📄 License
 
 This project is licensed under the MIT License.
-
-=======
->>>>>>> 112230d (Initial commit)

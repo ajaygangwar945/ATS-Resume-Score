@@ -7,22 +7,18 @@ from PIL import Image
 import pdf2image
 import google.generativeai as genai
 import base64
-<<<<<<< HEAD
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-=======
 
 # Get API key from environment variable or Streamlit secrets (for deployment)
 api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
     try:
         api_key = st.secrets.get("GOOGLE_API_KEY")
-    except (AttributeError, FileNotFoundError):
+    except (AttributeError, FileNotFoundError, KeyError):
         pass
 if not api_key:
     st.error("⚠️ API Key not found! Please set GOOGLE_API_KEY in your .env file or Streamlit secrets.")
     st.stop()
 genai.configure(api_key=api_key)
->>>>>>> 112230d (Initial commit)
 
 
 def get_gemini_response(input,pdf_content,prompt):
@@ -83,15 +79,36 @@ input_prompt3 = """
     First the output should be the percentage match and then the keywords missing in the resume."""
 if Submit1:
     if input_text and uploaded_file:
-        pdf_parts = input_pdf_setup(uploaded_file)
-        response = get_gemini_response(input_text,pdf_parts,input_prompt1)
-        st.write(response)
+        with st.spinner("Analyzing your resume..."):
+            pdf_parts = input_pdf_setup(uploaded_file)
+            response = get_gemini_response(input_text, pdf_parts, input_prompt1)
+            st.write(response)
     else:
         st.warning("Please enter a job description and upload a resume.")
+
+if Submit2:
+    if input_text and uploaded_file:
+        with st.spinner("Generating skill improvement suggestions..."):
+            pdf_parts = input_pdf_setup(uploaded_file)
+            response = get_gemini_response(input_text, pdf_parts, input_prompt2)
+            st.write(response)
+    else:
+        st.warning("Please enter a job description and upload a resume.")
+
+if Submit3:
+    if input_text and uploaded_file:
+        with st.spinner("Analyzing keywords..."):
+            pdf_parts = input_pdf_setup(uploaded_file)
+            response = get_gemini_response(input_text, pdf_parts, input_prompt3)
+            st.write(response)
+    else:
+        st.warning("Please enter a job description and upload a resume.")
+
 if submit4:
     if input_text and uploaded_file:
-        pdf_parts = input_pdf_setup(uploaded_file)
-        response = get_gemini_response(input_text,pdf_parts,input_prompt2)
-        st.write(response)
+        with st.spinner("Calculating match percentage..."):
+            pdf_parts = input_pdf_setup(uploaded_file)
+            response = get_gemini_response(input_text, pdf_parts, input_prompt3)
+            st.write(response)
     else:
         st.warning("Please enter a job description and upload a resume.")
