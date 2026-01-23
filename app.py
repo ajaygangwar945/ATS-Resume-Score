@@ -27,20 +27,37 @@ def get_gemini_response(input,pdf_content,prompt):
     return response.text
 
 def input_pdf_setup(uploaded_file):
-    if uploaded_file is not None:      
-        image = pdf2image.convert_from_bytes(uploaded_file.read())
-        first_page = image[0]
-        img_byte_arr = io.BytesIO()
-        first_page.save(img_byte_arr, format='JPEG')    
-        img_byte_arr = img_byte_arr.getvalue()
+    if uploaded_file is not None:
+        try:
+            image = pdf2image.convert_from_bytes(uploaded_file.read())
+            if not image or len(image) == 0:
+                raise ValueError("Failed to convert PDF to image. The PDF might be corrupted.")
+            first_page = image[0]
+            img_byte_arr = io.BytesIO()
+            first_page.save(img_byte_arr, format='JPEG')    
+            img_byte_arr = img_byte_arr.getvalue()
 
-        pdf_parts = [
-            {
-                "mime_type":"image/jpeg",
-                "data": base64.b64encode(img_byte_arr).decode('utf-8')
-            }
-        ]
-        return pdf_parts
+            pdf_parts = [
+                {
+                    "mime_type":"image/jpeg",
+                    "data": base64.b64encode(img_byte_arr).decode('utf-8')
+                }
+            ]
+            return pdf_parts
+        except pdf2image.exceptions.PDFInfoNotInstalledError:
+            st.error("""
+            ⚠️ **PDF Processing Error**: Poppler is not installed.
+            
+            **For Streamlit Cloud**: Make sure `packages.txt` with `poppler-utils` is in your repository.
+            **For Local Development**: Install poppler:
+            - Windows: Download from https://github.com/oschwartz10612/poppler-windows/releases
+            - macOS: `brew install poppler`
+            - Linux: `sudo apt-get install poppler-utils`
+            """)
+            st.stop()
+        except Exception as e:
+            st.error(f"Error processing PDF: {str(e)}")
+            st.stop()
     else:
         raise FileNotFoundError("File not found. Please upload a PDF file.")
         

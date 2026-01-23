@@ -29,6 +29,8 @@ git push origin main
 5. **Choose branch**: `main` (or your default branch)
 6. **Main file path**: `app.py`
 
+**📦 System Dependencies**: The `packages.txt` file is already included in the repository. This installs `poppler-utils` which is required for PDF processing. Streamlit Cloud will automatically install it during deployment.
+
 #### 3. Add Your API Key as Secret
 
 **Before clicking "Deploy":**
@@ -77,6 +79,12 @@ After deployment:
 - Verify your Gemini API key is valid
 - Check if API key has proper permissions
 - Regenerate key if needed
+
+**Error: "PDFInfoNotInstalledError" or "poppler not installed"**
+- ✅ **FIXED**: The `packages.txt` file is included in the repository
+- Make sure `packages.txt` contains `poppler-utils`
+- Redeploy the app after pushing `packages.txt` to GitHub
+- Streamlit Cloud will automatically install poppler on next deployment
 
 **App not updating**
 - Clear browser cache
