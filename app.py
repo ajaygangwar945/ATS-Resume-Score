@@ -24,7 +24,8 @@ genai.configure(api_key=api_key)
 def get_gemini_response(input,pdf_content,prompt):
     # Try models in order of preference (all support vision/image inputs)
     models_to_try = [
-        "gemini-1.5-pro",      # Best quality, supports vision
+        "gemini-2.5-flash",     # Latest model, fast and efficient
+        "gemini-1.5-pro",       # Best quality, supports vision
         "gemini-1.5-flash",     # Faster, cheaper, supports vision
         "gemini-pro-vision",    # Older but stable vision model
         "gemini-pro"            # Fallback (may not support images)
