@@ -1,8 +1,14 @@
 # 📄 ATS Resume Score
 
-![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
-![Gemini AI](https://img.shields.io/badge/Google-Gemini%20AI-4285F4)
+<p align="center">
+  <img src="assests/project_logo.png" width="200" alt="ATS Resume Score Logo">
+</p>
+
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/AI-Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
+![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white&link=https://ats-resume-score-945.streamlit.app/)
 
 **ATS Resume Score** is a powerful Streamlit-based web application that leverages Google's **Gemini AI** to analyze resumes against job descriptions. It acts as an intelligent Applicant Tracking System (ATS) scorer, providing actionable insights to help candidates improve their profiles.
 
@@ -10,7 +16,9 @@
 
 ## 🚀 Live Demo
 
-Try the live version of the app: [**ATS Resume Score**](https://ats-resume-score-945.streamlit.app/)
+Try the live version of the app:
+
+[![Live Website](https://img.shields.io/badge/LIVE-VISIT_SITE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ats-resume-score-945.streamlit.app/)
 
 ---
 
@@ -258,6 +266,8 @@ After deployment:
 
 **For Local Development**:
 
+- **Option 1 (Portable)**: Download the latest Release from [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases) (e.g., `Release-24.08.0-0.zip`), extract it, and rename the extracted folder to `poppler` (so the path `poppler/poppler-24.08.0/Library/bin` exists).
+- **Option 2 (System-wide)**: Install Poppler and add `bin` folder to your System PATH variables.
 - **Windows**: Download from [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)
 - **macOS**: `brew install poppler`
 - **Linux**: `sudo apt-get install poppler-utils`
