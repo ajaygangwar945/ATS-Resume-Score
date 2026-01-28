@@ -1,8 +1,8 @@
-# 📄 ATS Resume Score
-
 <p align="center">
-  <img src="assests/project_logo.png" width="200" alt="ATS Resume Score Logo">
+  <img src="assests/Gemini_Generated_Image_vC:\Users\ajayg\College\Learning\ATS\assests\Gemini_Generated_Image_vu4rdjvu4rdjvu4r.png" width="200" alt="ATS Resume Score Logo">
 </p>
+
+# 📄 ATS Resume Score
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
