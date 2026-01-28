@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assests/Gemini_Generated_Image_vC:\Users\ajayg\College\Learning\ATS\assests\Gemini_Generated_Image_vu4rdjvu4rdjvu4r.png" width="200" alt="ATS Resume Score Logo">
+  <img src="assests/Gemini_Generated_Image_vu4rdjvu4rdjvu4r.png" width="200" alt="ATS Resume Score Logo">
 </p>
 
 # 📄 ATS Resume Score
