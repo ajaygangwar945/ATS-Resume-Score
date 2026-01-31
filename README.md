@@ -1,5 +1,4 @@
-<p align="center">
-  <img src="assests/Gemini_Generated_Image_vu4rdjvu4rdjvu4r.png" width="100%" height="200" style="object-fit: cover" alt="ATS Resume Score Logo">
+  <img src="assets/Gemini_Generated_Image_vu4rdjvu4rdjvu4r.png" width="100%" height="200px" style="object-fit: cover" alt="ATS Resume Score Logo">
 </p>
 
 # 📄 ATS Resume Score
@@ -25,7 +24,7 @@ Try the live version of the app:
 ## 🖼️ App Preview
 
 <p align="center">
-  <img src="assests/app_preview.png" width="850"/>
+  <img src="assets/app_preview.png" width="850"/>
 </p>
 
 ---
