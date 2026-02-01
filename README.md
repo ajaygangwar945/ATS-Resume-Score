@@ -15,7 +15,7 @@
 
 ## 🚀 Live Demo
 
-Try the live version of the app:
+The project is live and accessible online.
 
 [![Live Website](https://img.shields.io/badge/LIVE-VISIT_SITE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ats-resume-score-945.streamlit.app/)
 
