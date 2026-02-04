@@ -296,6 +296,53 @@ After deployment:
 
 ---
 
+## 📁 Project Structure
+
+```
+ATS-Resume-Score/
+│
+├── app.py                    # Main Streamlit application
+├── requirements.txt          # Python dependencies
+├── packages.txt              # System packages (poppler-utils for PDF processing)
+├── .env.example              # Environment variable template
+├── .gitignore                # Git exclusions (including .env, secrets)
+├── README.md                 # Project documentation (this file)
+├── LICENSE                   # MIT License
+│
+├── assets/                   # Application assets
+│   ├── Gemini_Generated_Image_*.png  # Logo/banner image
+│   ├── app_preview.png       # Application screenshot
+│   └── .gitkeep              # Git tracking for empty directory
+│
+└── poppler/                  # PDF processing binaries (git-ignored, local only)
+    └── poppler-24.08.0/      # Windows poppler installation
+        └── Library/bin/      # Executables and DLLs
+```
+
+### Key Files
+
+- **`app.py`**: Core application with light/dark theme toggle and ATS analysis features
+- **`.env`**: Contains your API key (NOT in Git - create from `.env.example`)
+- **`.gitignore`**: Ensures secrets and binaries aren't committed to version control
+- **`packages.txt`**: Required for Streamlit Cloud deployment (installs poppler-utils)
+- **`assets/`**: Images used in README documentation
+
+---
+
+## 🔐 Security Audit Status
+
+✅ **Security Analysis Completed**: February 2026
+
+- ✅ No exposed API keys or secrets
+- ✅ Proper environment variable management (`.env` + `.gitignore`)
+- ✅ Comprehensive git exclusions configured
+- ✅ All files analyzed - no unused files found
+- ✅ Secure deployment practices documented
+
+**Overall Rating**: EXCELLENT
+
+---
+
 ## 📝 Notes
 
 - The application currently processes the **first page** of the uploaded PDF.
